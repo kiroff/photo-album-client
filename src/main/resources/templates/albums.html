@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Albums</title>
+    <style type="text/css">
+        body { font-family: system-ui, Arial, sans-serif; margin: 2rem; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+        th { background: #f6f6f6; }
+    </style>
+</head>
+<body>
+<h1>Albums</h1>
+
+<div th:if="${albums == null or #lists.isEmpty(albums)}">
+    <p>No albums found.</p>
+</div>
+
+<table th:if="${albums != null and !#lists.isEmpty(albums)}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album : ${albums}">
+        <td th:text="${album.id}">0</td>
+        <td th:text="${album.name}">Album 0</td>
+        <td>
+            <a th:href="${album.url}" th:text="${album.url}">link</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
