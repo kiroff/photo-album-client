@@ -46,7 +46,3 @@ A multi-module, Spring-based microservices playground for a “photo album” st
 - **Version mismatch issues:** verify you are running **JDK 25** (`java -version`) and using the module’s Maven Wrapper (`./mvnw`).
 - **Services not discovering each other:** start `discovery-service` first, then restart clients so they re-register.
 - **Auth failures (401/403):** check issuer URL, client ID/secret, redirect URIs, and scopes in the relevant module config.
-
-## License
-
-Add your license details here (or link to `LICENSE` if present).
