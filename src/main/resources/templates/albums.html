@@ -25,16 +25,14 @@
     <thead>
     <tr>
         <th>ID</th>
-        <th>Name</th>
-        <th>URL</th>
+        <th>Album</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="album : ${albums}">
         <td th:text="${album.id}">0</td>
-        <td th:text="${album.name}">Album 0</td>
         <td>
-            <a th:href="${album.url}" th:text="${album.url}">link</a>
+            <a th:href="${album.url}" th:text="${album.name()}">Album 0</a>
         </td>
     </tr>
     </tbody>
